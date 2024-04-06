@@ -1,3 +1,5 @@
+ENGLISH_ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+
 ENGLISH_LETTER_FREQUENCIES = {
     'e': 0.12019549870270922,
     't': 0.09098588613462202,
