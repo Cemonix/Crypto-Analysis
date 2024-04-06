@@ -10,7 +10,7 @@ from src.index_of_coincidence import index_of_coincidence
 if __name__ == "__main__":
     plaintext = read_file(Path("data/great_gatsby.txt"))
 
-    key = "KEYPA"
+    key = "KEY"
     ciphertext = vigenere_encrypt(plaintext, key)
     save_text_to_file(Path("data/great_gatsby_cipher.txt"), ciphertext)
 
