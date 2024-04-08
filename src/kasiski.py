@@ -1,7 +1,6 @@
 from math import gcd
 from functools import reduce
-from operator import pos
-from typing import Dict, List, Set
+from typing import Dict, List, Tuple, Set
 from collections import defaultdict, Counter
 
 
@@ -57,7 +56,7 @@ def pick_possible_keys(
     )
 
 
-def kasiski_examination(ciphertext: str, max_sequence_len: int = 7) -> Dict[int, int]:
+def kasiski_examination(ciphertext: str, max_sequence_len: int = 7) -> Tuple[int, int]:
     possible_keys = {}
     for seq_length in range(3, max_sequence_len):
         sequences_positions = find_repeated_sequences(
@@ -76,4 +75,4 @@ def kasiski_examination(ciphertext: str, max_sequence_len: int = 7) -> Dict[int,
                     possible_keys[key] += value 
 
     most_common_key, most_common_count = Counter(possible_keys).most_common(1)[0]
-    return {most_common_key: most_common_count}
+    return most_common_key, most_common_count
