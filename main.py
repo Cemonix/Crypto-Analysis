@@ -9,8 +9,7 @@ from src.index_of_coincidence import index_of_coincidence
 
 if __name__ == "__main__":
     # plaintext = read_file(Path("data/frankenstein.txt"))
-
-    # key = "KEYLA"
+    # key = "KEY"
     # ciphertext = vigenere_encrypt(plaintext, key)
     # save_text_to_file(Path("data/frankenstein_cipher.txt"), ciphertext)
 
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     ciphertext = normalize_text(ciphertext)
 
     estimated_key_length, _ = kasiski_examination(ciphertext=ciphertext)
-    # print(index_of_coincidence(ciphertext=ciphertext, max_key_length=20))
+    print(index_of_coincidence(ciphertext=ciphertext, max_key_length=20))
 
     decrypted_key = decrypt_key(ciphertext, estimated_key_length)
     print(decrypted_key)
